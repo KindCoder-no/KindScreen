@@ -6,6 +6,8 @@ This is an easy info TV-Screen page made in Node.JS and Express
 
 ## Install
 
+**NB: Remember to setup [config](#config) before running the application**
+
 First, install all the dependencies
 
 ```bash
@@ -70,3 +72,5 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
 
 - Calendar module
 - More customization possibilities
+
+Issues and pull requests are welcome
