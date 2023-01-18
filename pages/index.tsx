@@ -7,6 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 // This file needs to be created for the application to work
 import config from "../settings/page.json";
 
+import WeatherCard from "../components/WeatherCard";
+
 export default function Home() {
   return (
     <>
@@ -18,6 +20,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>{config.header}</h1>
+        <WeatherCard />
       </main>
     </>
   );
