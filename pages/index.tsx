@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 // This file needs to be created for the application to work
 import config from "../settings/page.json";
 
+import BusCard from "../components/BusCard";
 import WeatherCard from "../components/WeatherCard";
 
 export default function Home() {
@@ -20,12 +21,21 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>{config.header}</h1>
-        {config.weatherConfig?.enabled == true && (
-          <WeatherCard
-            lat={config.weatherConfig.lat}
-            lon={config.weatherConfig.lon}
-          />
-        )}
+        <div className="row justify-content-center w-100">
+          <div className="col-6">
+            {config.weatherConfig?.enabled == true && (
+              <WeatherCard
+                lat={config.weatherConfig.lat}
+                lon={config.weatherConfig.lon}
+              />
+            )}
+          </div>
+          <div className="col-6">
+            {config.busConfig?.enabled == true && (
+              <BusCard stopPlace={config.busConfig.stopPlace} />
+            )}
+          </div>
+        </div>
       </main>
     </>
   );
