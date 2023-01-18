@@ -2,7 +2,7 @@
 
 This is an easy info TV-Screen page made in Node.JS and Express
 
-**NB: This project is far from done!**
+_This project is stil in development, issues are welcome_
 
 ## Install
 
@@ -72,9 +72,10 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
 
 - Calendar module
 - More customization possibilities
+- Locale (i18n)
 
 Issues and pull requests are welcome
 
 ## Images
-![image](https://user-images.githubusercontent.com/40148297/213208302-a49173b4-bf3d-4152-8353-e58370167ba3.png)
 
+![image](https://user-images.githubusercontent.com/40148297/213208302-a49173b4-bf3d-4152-8353-e58370167ba3.png)
