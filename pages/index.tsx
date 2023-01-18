@@ -20,7 +20,12 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>{config.header}</h1>
-        <WeatherCard />
+        {config.weatherConfig?.enabled == true && (
+          <WeatherCard
+            lat={config.weatherConfig.lat}
+            lon={config.weatherConfig.lon}
+          />
+        )}
       </main>
     </>
   );

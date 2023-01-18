@@ -7,7 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
-export default function WeatherCard(props) {
+export default function WeatherCard({ lat, lon }) {
   // States
   const [response, setresponse] = React.useState(false);
   const [icon, seticon] = React.useState();
@@ -15,7 +15,10 @@ export default function WeatherCard(props) {
 
   React.useEffect(() => {
     fetch(
-      "https://api.met.no/weatherapi/nowcast/2.0/complete?lat=63.4203952&lon=10.4839164"
+      "https://api.met.no/weatherapi/nowcast/2.0/complete?lat=" +
+        lat +
+        "&lon=" +
+        lon
     )
       .then((res) => res.json())
       .then((json) => {
@@ -34,8 +37,11 @@ export default function WeatherCard(props) {
   if (response === false) {
     return (
       <div>
-        <h3>Laster Været</h3>
-        <CircularProgress />
+        <Card sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <CircularProgress />
+          </Box>
+        </Card>
       </div>
     );
   } else {
@@ -55,9 +61,6 @@ export default function WeatherCard(props) {
                 {temperature} &deg;
               </Typography>
             </CardContent>
-            <Box
-              sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
-            ></Box>
           </Box>
           <CardMedia
             component="img"
