@@ -1,6 +1,6 @@
 # KindScreen
 
-This is an easy info TV-Screen page made in Node.JS and Express
+This is an easy to use InfoScreen made in Next.JS
 
 _This project is stil in development, issues are welcome_
 
