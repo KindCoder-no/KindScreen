@@ -21,7 +21,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>{config.header}</h1>
+        <br></br>
+        <h1>{config?.header}</h1>
+        <br></br>
         <div className="row justify-content-center w-100">
           <div className="col-6">
             {config.weatherConfig?.enabled == true && (

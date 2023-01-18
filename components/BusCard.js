@@ -57,7 +57,12 @@ export default function BusCard({ stopPlace }) {
       setBusData(departures);
     };
     fetchBusdata();
-    setInterval(fetchBusdata, 1000 * 60);
+
+    const timer = setInterval(fetchBusdata, 1000 * 60);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   return (
