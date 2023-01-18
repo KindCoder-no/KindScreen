@@ -27,10 +27,15 @@ export default function Home() {
         <div className="row justify-content-center w-100">
           <div className="col-6">
             {config.weatherConfig?.enabled == true && (
-              <WeatherCard
-                lat={config.weatherConfig.lat}
-                lon={config.weatherConfig.lon}
-              />
+              <div className="row justify-content-center">
+                <div className="col-6">
+                  <WeatherCard
+                    lat={config.weatherConfig.lat}
+                    lon={config.weatherConfig.lon}
+                  />
+                </div>
+                <div className="col-6"></div>
+              </div>
             )}
             {config.newsConfig?.enabled == true && (
               <NrkCard
