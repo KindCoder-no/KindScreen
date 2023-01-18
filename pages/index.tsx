@@ -4,6 +4,9 @@ import styles from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// This file needs to be created for the application to work
+import config from "../settings/page.json";
+
 export default function Home() {
   return (
     <>
@@ -13,7 +16,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <h1>{config.header}</h1>
+      </main>
     </>
   );
 }
