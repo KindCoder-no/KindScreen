@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 import config from "../settings/page.json";
 
 import BusCard from "../components/BusCard";
+import NrkCard from "../components/NrkCard";
 import WeatherCard from "../components/WeatherCard";
 
 export default function Home() {
@@ -27,6 +28,12 @@ export default function Home() {
               <WeatherCard
                 lat={config.weatherConfig.lat}
                 lon={config.weatherConfig.lon}
+              />
+            )}
+            {config.newsConfig?.enabled == true && (
+              <NrkCard
+                feed={config.newsConfig.rssFeed}
+                articleCount={config.newsConfig.articleCount}
               />
             )}
           </div>
