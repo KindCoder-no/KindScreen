@@ -4,12 +4,14 @@ import "moment/locale/nb";
 import React from "react";
 moment.locale("nb");
 
-import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableRow from "@mui/material/TableRow";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+} from "@mui/material";
 
 export default function BusCard({ stopPlace }) {
   const [busData, setBusData] = React.useState();

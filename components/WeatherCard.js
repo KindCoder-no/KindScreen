@@ -1,12 +1,15 @@
 import * as React from "react";
 
 // MUI
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import CircularProgress from "@mui/material/CircularProgress";
-import Typography from "@mui/material/Typography";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  CircularProgress,
+  Typography,
+} from "@mui/material";
+
 export default function WeatherCard({ lat, lon }) {
   // States
   const [response, setresponse] = React.useState(false);

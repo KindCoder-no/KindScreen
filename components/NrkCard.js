@@ -1,12 +1,14 @@
 import React from "react";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Chip from "@mui/material/Chip";
-import CircularProgress from "@mui/material/CircularProgress";
-import LinearProgress from "@mui/material/LinearProgress";
-import Typography from "@mui/material/Typography";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  CircularProgress,
+  LinearProgress,
+  Typography,
+} from "@mui/material";
 
 export default function NrkCard({ feed, articleCount }) {
   const [news, setNews] = React.useState(null);
