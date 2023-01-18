@@ -74,3 +74,7 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
 - More customization possibilities
 
 Issues and pull requests are welcome
+
+## Images
+![image](https://user-images.githubusercontent.com/40148297/213208302-a49173b4-bf3d-4152-8353-e58370167ba3.png)
+
