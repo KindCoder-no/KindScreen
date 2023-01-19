@@ -9,6 +9,7 @@ import config from "../settings/page.json";
 
 import BusCard from "../components/BusCard";
 import NrkCard from "../components/NrkCard";
+import TimeCard from "../components/TimeCard";
 import WeatherCard from "../components/WeatherCard";
 
 export default function Home() {
@@ -26,17 +27,20 @@ export default function Home() {
         <br></br>
         <div className="row justify-content-center w-100">
           <div className="col-6">
-            {config.weatherConfig?.enabled == true && (
-              <div className="row justify-content-center">
-                <div className="col-6">
+            <div className="row justify-content-center">
+              <div className="col-6">
+                {config.clockConfig?.enabled == true && <TimeCard />}
+              </div>
+              <div className="col-6">
+                {config.weatherConfig?.enabled == true && (
                   <WeatherCard
                     lat={config.weatherConfig.lat}
                     lon={config.weatherConfig.lon}
                   />
-                </div>
-                <div className="col-6"></div>
+                )}
               </div>
-            )}
+            </div>
+
             {config.newsConfig?.enabled == true && (
               <NrkCard
                 feed={config.newsConfig.rssFeed}

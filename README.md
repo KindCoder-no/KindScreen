@@ -50,6 +50,9 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
     "lat": "63.4203952", // latitude
     "lon": "10.4839164" // longitude
   },
+  "clockConfig": {
+    "enabled": true // true/false
+  },
   "busConfig": { // Config for bus module
     "enabled": true, // true/false
     "stopPlace": "NSR:StopPlace:42282" // StopPlace ID, can be found at: https://stoppested.entur.org
