@@ -10,8 +10,13 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function NrkCard({ feed, articleCount }) {
-  const [news, setNews] = React.useState(null);
+type Props = {
+  feed: string;
+  articleCount: number;
+};
+
+export default function NrkCard(props: Props) {
+  const [news, setNews] = React.useState<any[]>([]);
   const [currentNews, setCurrentNews] = React.useState(0);
   const [progress, setProgress] = React.useState(0);
 
@@ -20,7 +25,7 @@ export default function NrkCard({ feed, articleCount }) {
       setProgress((oldProgress) => {
         if (oldProgress >= 100) {
           setCurrentNews((current) => {
-            if (current >= articleCount - 1) {
+            if (current >= props.articleCount - 1) {
               return 0;
             }
 
@@ -40,9 +45,9 @@ export default function NrkCard({ feed, articleCount }) {
 
   React.useEffect(() => {
     function getNews() {
-      var newsArray = [];
+      var newsArray: any[] = [];
 
-      fetch(feed)
+      fetch(props.feed)
         .then((response) => response.text())
         .then((str) => {
           var parser = new DOMParser();
@@ -57,16 +62,19 @@ export default function NrkCard({ feed, articleCount }) {
             new XMLSerializer().serializeToString(xmlDoc.documentElement)
           ); // Assume xmlText contains the example XML
           //console.log(NewXml.children[0].children);
-          NewXml.children[0].children.forEach((data) => {
+          NewXml.children[0].children.forEach((data: any) => {
             if (data.name == "item") {
-              var title = data.children.find((o) => o.name === "title").value;
-              var description = data.children.find(
-                (o) => o.name === "description"
+              var title = data.children.find(
+                (o: any) => o.name === "title"
               ).value;
-              var image = data.children.find((o) => o.name === "media:content")
-                ?.attributes.url;
+              var description = data.children.find(
+                (o: any) => o.name === "description"
+              ).value;
+              var image = data.children.find(
+                (o: any) => o.name === "media:content"
+              )?.attributes.url;
               var category = data.children.find(
-                (o) => o.name === "category"
+                (o: any) => o.name === "category"
               )?.value;
               //console.log(data.children);
               console.log(category);
@@ -102,21 +110,21 @@ export default function NrkCard({ feed, articleCount }) {
         <Card>
           <CardMedia
             sx={{ height: 450 }}
-            image={news[currentNews].image}
+            image={news[currentNews]?.image}
             title="News Header Image"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {news[currentNews].title}
+              {news[currentNews]?.title}
             </Typography>
             <Chip
-              label={news[currentNews].category}
+              label={news[currentNews]?.category}
               color="primary"
               variant="outlined"
             />
             <div className="mt-3"></div>
             <Typography variant="body2" color="text.secondary">
-              {news[currentNews].description}
+              {news[currentNews]?.description}
             </Typography>
             <br></br>
             <LinearProgress variant="determinate" value={progress} />

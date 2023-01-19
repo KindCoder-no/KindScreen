@@ -10,7 +10,12 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function WeatherCard({ lat, lon }) {
+type Props = {
+  lat: string;
+  lon: string;
+};
+
+export default function WeatherCard(props: Props) {
   // States
   const [response, setresponse] = React.useState(false);
   const [icon, seticon] = React.useState();
@@ -19,9 +24,9 @@ export default function WeatherCard({ lat, lon }) {
   React.useEffect(() => {
     fetch(
       "https://api.met.no/weatherapi/nowcast/2.0/complete?lat=" +
-        lat +
+        props.lat +
         "&lon=" +
-        lon
+        props.lon
     )
       .then((res) => res.json())
       .then((json) => {
