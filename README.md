@@ -4,6 +4,13 @@ This is an easy to use InfoScreen made in Next.JS
 
 _This project is stil in development, issues are welcome_
 
+Jump to:
+
+- [Install](#install)
+- [Config](#config)
+- [Updating](#updating)
+- [Features](#features)
+
 ## Install
 
 **NB: Remember to setup [config](#config) before running the application**
