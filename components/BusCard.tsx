@@ -4,14 +4,21 @@ import "moment/locale/nb";
 import React from "react";
 moment.locale("nb");
 
-import { Paper, Table, TableBody, TableCell, TableContainer, TableRow } from "@mui/material";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+} from "@mui/material";
 
 type Props = {
   stopPlace: string;
 };
 
-export default function BusCard (props: Props) {
-  const [busData, setBusData] = React.useState<any[]>([])
+export default function BusCard(props: Props) {
+  const [busData, setBusData] = React.useState<any[]>([]);
 
   React.useEffect(() => {
     const fetchBusdata = async () => {
@@ -64,11 +71,8 @@ export default function BusCard (props: Props) {
     };
   }, []);
 
-  
-
-
   return (
-    <TableContainer component={Paper} >
+    <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableBody>
           {busData &&
@@ -78,7 +82,7 @@ export default function BusCard (props: Props) {
                   key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
+                  <TableCell component="th" scope="row" sx={{ fontSize: 35 }}>
                     {data.realtime == false && "ca "}
                     {moment(data.expectedDepartureTime).diff(
                       moment(),
@@ -104,7 +108,7 @@ export default function BusCard (props: Props) {
                       60 * 10 &&
                       moment(data.expectedDepartureTime).format("LT")}
                   </TableCell>
-                  <TableCell align="left">
+                  <TableCell align="left" sx={{ fontSize: 35 }}>
                     {data.serviceJourney.line.publicCode}{" "}
                     {data.destinationDisplay.frontText}
                   </TableCell>
@@ -114,6 +118,5 @@ export default function BusCard (props: Props) {
         </TableBody>
       </Table>
     </TableContainer>
-  )
-};
-
+  );
+}
