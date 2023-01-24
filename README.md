@@ -68,9 +68,35 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
 
 ## Updating
 
-When you want to update the screen, you can either download the source code, or use your own fork of the repository
+When you want to update the screen, you can either download the source code, or use git to fetch latest updates
 
-(More docs comming)
+### First time updating
+
+In your installed folder, initialize git:
+
+```sh
+git init
+```
+
+Then you can add the github repo as upstream
+
+```sh
+git remote add upstream https://github.com/KindCoder-no/KindScreen
+```
+
+### After you have setup git
+
+Fetch updates:
+
+```sh
+git fetch upstream
+```
+
+Pull latest changes:
+
+```sh
+git pull upstream main
+```
 
 ## Features
 
