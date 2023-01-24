@@ -70,6 +70,8 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
 
 When you want to update the screen, you can either download the source code, or use your own fork of the repository
 
+(More docs comming)
+
 ## Features
 
 - Get weather based on geolocation
