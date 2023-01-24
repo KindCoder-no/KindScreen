@@ -16,5 +16,6 @@
     "enabled": true,
     "rssFeed": "https://www.nrk.no/toppsaker.rss",
     "articleCount": 10
-  }
+  },
+  "updateCheck": true
 }

@@ -25,7 +25,7 @@ export default function Home() {
       <main className={styles.main}>
         <br></br>
         <h1>{config?.header}</h1>
-        <Updates />
+        {config.updateCheck == true && <Updates />}
         <br></br>
         <div className="row justify-content-center w-100">
           <div className="col-6">

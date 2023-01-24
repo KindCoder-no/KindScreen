@@ -61,7 +61,8 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
     "enabled": true, // true/false
     "rssFeed": "https://www.nrk.no/toppsaker.rss", // Url for nrk.no rss feed. All feed urls: https://nrk.no/rss
     "articleCount": 10 // How many news article should be shown
-  }
+  },
+  "updateCheck": true // If the server should look for new update
 }
 ```
 
