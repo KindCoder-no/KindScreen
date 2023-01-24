@@ -10,6 +10,7 @@ import config from "../settings/page.json";
 import BusCard from "../components/BusCard";
 import NrkCard from "../components/NrkCard";
 import TimeCard from "../components/TimeCard";
+import Updates from "../components/Updates";
 import WeatherCard from "../components/WeatherCard";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <main className={styles.main}>
         <br></br>
         <h1>{config?.header}</h1>
+        <Updates />
         <br></br>
         <div className="row justify-content-center w-100">
           <div className="col-6">
