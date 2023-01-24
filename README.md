@@ -29,11 +29,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To deploy you can use Vercel, or build your own
 
 ```bash
-# Start Next.js built in server
-npm run start
-
 # Build to static HTML
 npm run build
+
+# Start Next.js built in server
+npm run start
 ```
 
 ## Config
@@ -87,4 +87,3 @@ Issues and pull requests are welcome
 ## Images
 
 ![Skjermbilde 2023-01-24 kl  13 37 04](https://user-images.githubusercontent.com/40148297/214293391-e7585b2e-01a7-4598-91c9-5af1bd7b7e0f.png)
-
