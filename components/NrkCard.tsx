@@ -54,14 +54,12 @@ export default function NrkCard(props: Props) {
           var xmlDoc = parser.parseFromString(str, "text/xml");
           var item = xmlDoc.getElementsByTagName("item")[0];
           var xmlDoc2 = parser.parseFromString(str, "text/xml");
-          //console.log(xmlDoc2.getElementsByTagName("media:content")[0]);
 
           //var xml = new XMLParser().parseFromString(str);
           var XMLParser = require("react-xml-parser");
           var NewXml = new XMLParser().parseFromString(
             new XMLSerializer().serializeToString(xmlDoc.documentElement)
           ); // Assume xmlText contains the example XML
-          //console.log(NewXml.children[0].children);
           NewXml.children[0].children.forEach((data: any) => {
             if (data.name == "item") {
               var title = data.children.find(
@@ -76,8 +74,6 @@ export default function NrkCard(props: Props) {
               var category = data.children.find(
                 (o: any) => o.name === "category"
               )?.value;
-              //console.log(data.children);
-              console.log(category);
               newsArray.push({ title, description, image, category });
             }
           });

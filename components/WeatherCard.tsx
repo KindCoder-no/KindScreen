@@ -30,7 +30,6 @@ export default function WeatherCard(props: Props) {
     )
       .then((res) => res.json())
       .then((json) => {
-        //console.log(json.properties.timeseries[0].data)
         seticon(
           json.properties.timeseries[0].data.next_1_hours.summary.symbol_code
         );
