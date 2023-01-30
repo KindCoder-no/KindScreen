@@ -1,8 +1,5 @@
-import { Inter } from "@next/font/google";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 // This file needs to be created for the application to work
 import config from "../settings/page.json";
