@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 // This file needs to be created for the application to work
-import config from "../settings/page.json";
+//import config from "../settings/page.json";
 
 import BusCard from "../components/BusCard";
 import NrkCard from "../components/NrkCard";
@@ -10,7 +10,7 @@ import TimeCard from "../components/TimeCard";
 import Updates from "../components/Updates";
 import WeatherCard from "../components/WeatherCard";
 
-export default function Home() {
+export default function Home(props: any) {
   return (
     <>
       <Head>
@@ -21,39 +21,65 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <br></br>
-        <h1>{config?.header}</h1>
-        {config.updateCheck == true && <Updates />}
+        <h1>{props?.config?.header}</h1>
+        {props?.config?.updateCheck == true && <Updates />}
         <br></br>
         <div className="row justify-content-center w-100">
           <div className="col-6">
             <div className="row justify-content-center">
               <div className="col-6">
-                {config.clockConfig?.enabled == true && <TimeCard />}
+                {props.config?.clockConfig?.enabled == true && <TimeCard />}
               </div>
               <div className="col-6">
-                {config.weatherConfig?.enabled == true && (
+                {props?.config?.weatherConfig?.enabled == true && (
                   <WeatherCard
-                    lat={config.weatherConfig.lat}
-                    lon={config.weatherConfig.lon}
+                    lat={props?.config?.weatherConfig.lat}
+                    lon={props?.config?.weatherConfig.lon}
                   />
                 )}
               </div>
             </div>
 
-            {config.newsConfig?.enabled == true && (
+            {props?.config?.newsConfig?.enabled == true && (
               <NrkCard
-                feed={config.newsConfig.rssFeed}
-                articleCount={config.newsConfig.articleCount}
+                feed={props?.config?.newsConfig.rssFeed}
+                articleCount={props?.config?.newsConfig.articleCount}
               />
             )}
           </div>
           <div className="col-6">
-            {config.busConfig?.enabled == true && (
-              <BusCard stopPlace={config.busConfig.stopPlace} />
+            {props?.config?.busConfig?.enabled == true && (
+              <BusCard stopPlace={props?.config?.busConfig.stopPlace} />
             )}
           </div>
         </div>
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const fs = require("fs");
+
+  const path = "./settings/page.json";
+
+  let config = {};
+
+  try {
+    if (fs.existsSync(path)) {
+      //file exists
+      let rawConfig = fs.readFileSync(path);
+      let settings = JSON.parse(rawConfig);
+
+      config = settings;
+    }
+  } catch (err) {
+    config = {};
+  }
+
+  return {
+    props: {
+      config: config,
+    },
+  };
 }
