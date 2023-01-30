@@ -104,20 +104,32 @@ export default function NrkCard(props: Props) {
         <br></br>
 
         <Card>
-          <CardMedia
-            sx={{ height: 450 }}
-            image={news[currentNews]?.image}
-            title="News Header Image"
-          />
+          {news[currentNews]?.image != undefined ? (
+            <CardMedia
+              sx={{ height: 450 }}
+              image={news[currentNews]?.image}
+              title="News Header Image"
+            />
+          ) : (
+            <CardMedia
+              sx={{ height: 450 }}
+              image={"/nrk-logo.jpg"}
+              title="News Header Image"
+            />
+          )}
+
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {news[currentNews]?.title}
             </Typography>
-            <Chip
-              label={news[currentNews]?.category}
-              color="primary"
-              variant="outlined"
-            />
+            {news[currentNews]?.category != undefined && (
+              <Chip
+                label={news[currentNews]?.category}
+                color="primary"
+                variant="outlined"
+              />
+            )}
+
             <div className="mt-3"></div>
             <Typography variant="body2" color="text.secondary">
               {news[currentNews]?.description}
