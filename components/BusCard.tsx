@@ -22,45 +22,50 @@ export default function BusCard(props: Props) {
 
   React.useEffect(() => {
     const fetchBusdata = async () => {
-      const response = await fetch(
-        "https://api.entur.io/journey-planner/v3/graphql",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            query: `{
-                    stopPlace(id: "${props.stopPlace}") {
-                      description
-                      name
-                      estimatedCalls(numberOfDepartures: 10) {
-                        actualArrivalTime
-                        actualDepartureTime
-                        date
-                        realtime
-                        destinationDisplay {
-                            frontText
-                        }
-                        expectedDepartureTime
-                        serviceJourney {
-                          line {
-                            name
-                            publicCode
+      try {
+        const response = await fetch(
+          "https://api.entur.io/journey-planner/v3/graphql",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              query: `{
+                      stopPlace(id: "${props.stopPlace}") {
+                        description
+                        name
+                        estimatedCalls(numberOfDepartures: 10) {
+                          actualArrivalTime
+                          actualDepartureTime
+                          date
+                          realtime
+                          destinationDisplay {
+                              frontText
+                          }
+                          expectedDepartureTime
+                          serviceJourney {
+                            line {
+                              name
+                              publicCode
+                            }
                           }
                         }
                       }
                     }
-                  }
-                  `,
-          }),
-        }
-      );
-      const enturJSON = await response.json();
-      const data = enturJSON.data.stopPlace;
-      const departures = data.estimatedCalls;
+                    `,
+            }),
+          }
+        );
+        const enturJSON = await response.json();
+        const data = enturJSON.data.stopPlace;
+        const departures = data.estimatedCalls;
 
-      setBusData(departures);
+        setBusData(departures);
+      } catch (err) {
+        // Add more error handling later
+        console.log(err);
+      }
     };
     fetchBusdata();
 
