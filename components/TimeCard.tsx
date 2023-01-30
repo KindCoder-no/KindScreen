@@ -36,7 +36,7 @@ export default function TimeCard() {
       <Card
         sx={{
           display: "flex",
-          minHeight: 100,
+          minHeight: 100
         }}
       >
         <CardMedia
@@ -49,7 +49,7 @@ export default function TimeCard() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         >
           <CardContent style={{ width: 100 }}>

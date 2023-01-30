@@ -10,7 +10,7 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableRow,
+  TableRow
 } from "@mui/material";
 
 type Props = {
@@ -28,7 +28,7 @@ export default function BusCard(props: Props) {
           {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",
+              "Content-Type": "application/json"
             },
             body: JSON.stringify({
               query: `{
@@ -53,8 +53,8 @@ export default function BusCard(props: Props) {
                         }
                       }
                     }
-                    `,
-            }),
+                    `
+            })
           }
         );
         const enturJSON = await response.json();

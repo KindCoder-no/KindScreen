@@ -7,7 +7,7 @@ import {
   Chip,
   CircularProgress,
   LinearProgress,
-  Typography,
+  Typography
 } from "@mui/material";
 
 type Props = {

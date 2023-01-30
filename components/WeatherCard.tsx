@@ -7,7 +7,7 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
-  Typography,
+  Typography
 } from "@mui/material";
 
 type Props = {

@@ -79,7 +79,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      config: config,
-    },
+      config: config
+    }
   };
 }
