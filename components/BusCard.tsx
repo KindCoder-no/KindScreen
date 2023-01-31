@@ -15,6 +15,7 @@ import {
 
 type Props = {
   stopPlace: string;
+  fontSize: string;
 };
 
 export default function BusCard(props: Props) {
@@ -87,7 +88,11 @@ export default function BusCard(props: Props) {
                   key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row" sx={{ fontSize: 35 }}>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    sx={{ fontSize: props?.fontSize }}
+                  >
                     {data.realtime == false && "ca "}
                     {moment(data.expectedDepartureTime).diff(
                       moment(),
@@ -113,7 +118,7 @@ export default function BusCard(props: Props) {
                       60 * 10 &&
                       moment(data.expectedDepartureTime).format("LT")}
                   </TableCell>
-                  <TableCell align="left" sx={{ fontSize: 35 }}>
+                  <TableCell align="left" sx={{ fontSize: props?.fontSize }}>
                     {data.serviceJourney.line.publicCode}{" "}
                     {data.destinationDisplay.frontText}
                   </TableCell>

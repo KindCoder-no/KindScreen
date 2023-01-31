@@ -18,7 +18,8 @@
   },
   "busConfig": {
     "enabled": true,
-    "stopPlace": "NSR:StopPlace:42282"
+    "stopPlace": "NSR:StopPlace:42282",
+    "fontSize": 25
   },
   "newsConfig": {
     "enabled": true,

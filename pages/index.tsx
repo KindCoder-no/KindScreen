@@ -64,7 +64,10 @@ export default function Home(props: any) {
           </div>
           <div className="col-6">
             {props?.config?.busConfig?.enabled == true && (
-              <BusCard stopPlace={props?.config?.busConfig.stopPlace} />
+              <BusCard
+                stopPlace={props?.config?.busConfig.stopPlace}
+                fontSize={props?.config?.busConfig?.fontSize}
+              />
             )}
           </div>
         </div>

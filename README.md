@@ -74,7 +74,8 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
   },
   "busConfig": { // Config for bus module
     "enabled": true, // true/false
-    "stopPlace": "NSR:StopPlace:42282" // StopPlace ID, can be found at: https://stoppested.entur.org
+    "stopPlace": "NSR:StopPlace:42282", // StopPlace ID, can be found at: https://stoppested.entur.org
+    "fontSize": 25
   },
   "newsConfig": { // Config for news module
     "enabled": true, // true/false
