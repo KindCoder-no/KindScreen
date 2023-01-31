@@ -41,7 +41,13 @@ export default function TimeCard() {
       >
         <CardMedia
           component="img"
-          sx={{ width: 100, height: 100 }}
+          sx={{
+            width: 100,
+            height: 100,
+            marginBottom: 1.5,
+            marginTop: 1.5,
+            marginLeft: 1.5
+          }}
           image={"/clock.png"}
           alt="Weather Icon"
         />

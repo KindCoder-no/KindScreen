@@ -55,7 +55,7 @@ export default function WeatherCard(props: Props) {
             seconds = "0" + date_ob.getSeconds();
           }
 
-          setUpdated(hours + ":" + minutes + ":" + seconds);
+          setUpdated(hours + ":" + minutes);
         })
         .catch((err) => console.log(err));
     }
@@ -106,7 +106,7 @@ export default function WeatherCard(props: Props) {
             />
           </Box>
           <Typography sx={{ marginLeft: 1 }} color="text.secondary">
-            Opdatert: {updated}
+            Oppdatert: {updated}
           </Typography>
         </Card>
       </div>
