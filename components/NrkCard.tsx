@@ -74,7 +74,10 @@ export default function NrkCard(props: Props) {
               var category = data.children.find(
                 (o: any) => o.name === "category"
               )?.value;
-              newsArray.push({ title, description, image, category });
+              var link = data.children.find(
+                (o: any) => o.name === "link"
+              ).value;
+              newsArray.push({ title, description, image, category, link });
             }
           });
           setNews(newsArray);
@@ -106,7 +109,7 @@ export default function NrkCard(props: Props) {
         <Card>
           {news[currentNews]?.image != undefined ? (
             <CardMedia
-              sx={{ height: 450 }}
+              sx={{ width: 450 }}
               image={news[currentNews]?.image}
               title="News Header Image"
             />
@@ -119,9 +122,16 @@ export default function NrkCard(props: Props) {
           )}
 
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {news[currentNews]?.title}
-            </Typography>
+            <Typography color="text.secondary">Nyheter fra NRK</Typography>
+            <a
+              href={news[currentNews]?.link}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <Typography gutterBottom variant="h5" component="div">
+                {news[currentNews]?.title}
+              </Typography>
+            </a>
             {news[currentNews]?.category != undefined && (
               <Chip
                 label={news[currentNews]?.category}
