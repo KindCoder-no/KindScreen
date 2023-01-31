@@ -55,7 +55,15 @@ Copy the content of `settings/page.json.example` to a new file: `settings/page.j
 
 ```JSON
 {
-  "header": "KindScreen", // Header of the screen (can be empty)
+  "header": {
+    "image": {
+      "enabled": true, // true/false
+      "src": "http://localhost:3000/nrk-logo.jpg",
+      "height": "50",
+      "width": "100"
+    },
+    "title": "KindScreen" // title of the screen (can be empty)
+  },
   "weatherConfig": { // Config for weather module
     "enabled": true, // true/false
     "lat": "63.4203952", // latitude

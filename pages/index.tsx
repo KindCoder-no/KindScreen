@@ -21,7 +21,22 @@ export default function Home(props: any) {
       </Head>
       <main className={styles.main}>
         <br></br>
-        <h1>{props?.config?.header}</h1>
+        <div className="row justify-content-center w-100">
+          <div className="col-4">
+            {props?.config?.header?.image?.enabled == true && (
+              <img
+                src={props?.config?.header?.image?.src}
+                alt="Header image"
+                width={props?.config?.header?.image?.width}
+                height={props?.config?.header?.image?.height}
+              />
+            )}
+          </div>
+          <div className="col-4">
+            <h1 className="text-center">{props?.config?.header?.title}</h1>
+          </div>
+          <div className="col-4"></div>
+        </div>
         {props?.config?.updateCheck == true && <Updates />}
         <br></br>
         <div className="row justify-content-center w-100">

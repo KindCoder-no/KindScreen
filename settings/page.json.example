@@ -1,5 +1,13 @@
 {
-  "header": "KindScreen",
+  "header": {
+    "image": {
+      "enabled": true,
+      "src": "http://localhost:3000/nrk-logo.jpg",
+      "height": "50",
+      "width": "100"
+    },
+    "title": "KindScreen"
+  },
   "weatherConfig": {
     "enabled": true,
     "lat": "63.4203952",
