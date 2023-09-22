@@ -4,6 +4,8 @@
 
 This is an easy to use InfoScreen made in Next.JS
 
+If you want a more profecional solution. Register at https://publy.no or send me an email at: emre@publy.no
+
 ![Skjermbilde 2023-01-24 kl  13 37 04](https://user-images.githubusercontent.com/40148297/214293391-e7585b2e-01a7-4598-91c9-5af1bd7b7e0f.png)
 
 _This project is stil in development, issues are welcome_
